@@ -7,6 +7,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:id="@+id/tv_hello_world"
         android:gravity="center"
         android:layout_weight="1"
         />
@@ -15,7 +16,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_text"
+        android:id="@+id/btn_hello_world"
+        android:layout_below="@+id/tv_hello_world"
         android:gravity="center"
+        android:onClick="fct"
         />
 
 </LinearLayout>

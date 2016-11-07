@@ -31,5 +31,7 @@
         android:layout_alignParentTop="false"
         android:allowUndo="true"
         android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:onClick="fct"
+        />
 </RelativeLayout>
