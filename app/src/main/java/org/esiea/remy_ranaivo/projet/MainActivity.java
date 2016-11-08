@@ -2,12 +2,15 @@ package org.esiea.remy_ranaivo.projet;
 
 import android.app.DatePickerDialog;
 import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -37,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void fctIntent(){
-
-    }
 
     public void notification_test(){
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
@@ -57,10 +57,14 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Toast test : coucou", Toast.LENGTH_SHORT).show();
         dpd.show();
         notification_test();
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
     }
+    public static final String BEERS_UPDATE="com.octip.cours.inf4042_11.BEERS_UPDATE";
+
+
+
 }
-
-
 
 
 
