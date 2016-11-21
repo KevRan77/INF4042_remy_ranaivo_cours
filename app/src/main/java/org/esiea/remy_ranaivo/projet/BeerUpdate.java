@@ -15,5 +15,6 @@ public class BeerUpdate extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.d("tag",intent.getAction());
         Toast.makeText(context,"download is finished",Toast.LENGTH_LONG).show();
+        ((BiersAdapter) MainActivity.rv.getAdapter()).setNewBiere(BiersAdapter.biers);
     }
 }

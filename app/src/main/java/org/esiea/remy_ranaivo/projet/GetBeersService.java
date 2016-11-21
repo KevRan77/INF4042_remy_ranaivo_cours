@@ -6,7 +6,11 @@ import android.content.Context;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -68,6 +72,7 @@ public class GetBeersService extends IntentService {
             if(HttpURLConnection.HTTP_OK==conn.getResponseCode()){
                 copyInputStreamToFile(conn.getInputStream(),new File(getCacheDir(),"bieres.json"));
                 Log.d("TAG","Bieres json téléchargées");
+
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.BEERS_UPDATE));
             }
 
@@ -79,6 +84,7 @@ public class GetBeersService extends IntentService {
             e.printStackTrace();
         }
     }
+
 
     private void copyInputStreamToFile(InputStream in, File file){
         try {
@@ -93,6 +99,7 @@ public class GetBeersService extends IntentService {
         }catch (Exception e){
         }
     }
+
 
 
 }
